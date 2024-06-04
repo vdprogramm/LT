@@ -1,25 +1,36 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.34916.146
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exe1", "exe1\exe1.csproj", "{E1F5E3C3-5A53-41EC-9136-678F1D700DAC}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1F5E3C3-5A53-41EC-9136-678F1D700DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1F5E3C3-5A53-41EC-9136-678F1D700DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1F5E3C3-5A53-41EC-9136-678F1D700DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1F5E3C3-5A53-41EC-9136-678F1D700DAC}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {78D3705E-7C67-411D-A94B-3592C51250E3}
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace exe1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Please enter a number: ");
+            string input = Console.ReadLine();
+
+            double number;
+            bool success = double.TryParse(input, out number);
+
+            if (success)
+            {
+                if (number > 0)
+                {
+                    Console.WriteLine("The number is positive.");
+                }
+                else if (number < 0)
+                {
+                    Console.WriteLine("The number is negative.");
+                }
+                else
+                {
+                    Console.WriteLine("The number is zero.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+            }
+    }
+}
