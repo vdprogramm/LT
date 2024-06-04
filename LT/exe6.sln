@@ -1,25 +1,38 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.34916.146
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exe6", "exe6\exe6.csproj", "{7C324AAE-9B73-4790-BC89-6DEF5B849278}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7C324AAE-9B73-4790-BC89-6DEF5B849278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C324AAE-9B73-4790-BC89-6DEF5B849278}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C324AAE-9B73-4790-BC89-6DEF5B849278}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C324AAE-9B73-4790-BC89-6DEF5B849278}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FA494AB5-75DF-4601-A10A-FD6CC05BC592}
-	EndGlobalSection
-EndGlobal
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int sum = 0;
+        while (true)
+        {
+            Console.Write("Enter a number (or type 'stop' to end): ");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "stop")
+            {
+                break;
+            }
+
+            int number;
+            if (int.TryParse(input, out number))
+            {
+                if (number > 0)
+                {
+                    sum += number;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
+
+        Console.WriteLine($"The sum of the positive numbers entered is: {sum}");
+    }
+}
